@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <h1>All tasks</h1>
+  <br>
+  <div class="container mt-5">
+    <% @tasks.each do |task| %>
+      <div id="list">
+        <% if task[:completed] %>
+          <i class="fa-regular fa-square-check"></i>
+        <% else  %>
+          <i class="fa-regular fa-square"></i>
+        <% end %>
+        <p><%= link_to task["title"], show_path(task)%></p>
+      </div>
+    <% end %>
+
+  </div>
+</div>
